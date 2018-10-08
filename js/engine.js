@@ -55,32 +55,16 @@ var Engine = (function(global) {
 
         /* Use the browser's requestAnimationFrame function to call this
          * function again as soon as the browser is able to draw another frame.
-         */
-        // if (player.winner === true) {
-        //     win.cancelAnimationFrame(id);
-        //     $(".hide").toggle('.modal_background');
-        //     }
-        //     else {
-        //         id = win.requestAnimationFrame(main);
-        //     }
-            
-        // $('.replay_button').click(function(){
-        //     if($(".modal_background").addClass( "hide" )){
-        //         player.reset();
-        //         player.winner = false;
-        //     } else {
-        //         win.requestAnimationFrame(main);
-        //     }
-        // })   
+         */  
         if (player.winner === true) {
             win.cancelAnimationFrame(id);
             $(".hide").toggle('.modal_background');
+            });
         } else {
             id = win.requestAnimationFrame(main);
         };
 
         $('.replay_button').click(function(){
-            $('div').removeClass('.hide');
             player.reset();
             player.winner = false;
         });
