@@ -59,7 +59,9 @@ var Engine = (function(global) {
         if (player.winner === true) {
             win.cancelAnimationFrame(id);
             $(".hide").toggle('.modal_background');
-            };
+            } else {
+                id = win.requestAnimationFrame(main);
+            }
             
         $('.replay_button').click(function(){
             if($(".modal_background").addClass( "hide" )){
