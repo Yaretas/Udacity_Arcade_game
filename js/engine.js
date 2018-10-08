@@ -59,7 +59,8 @@ var Engine = (function(global) {
         if (player.winner === true) {
             // win.cancelAnimationFrame(id);
             gameState = 1;
-            $('.hide').toggle(".modal_background");
+            $('.hide').hide();
+            $(".modal_background").toggle("bounce", { times: 4 }, "slow");
         } else if (gameState === 0) {
             win.requestAnimationFrame(main);
         }
