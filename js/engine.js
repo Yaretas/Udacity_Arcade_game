@@ -59,7 +59,8 @@ var Engine = (function(global) {
         if (player.winner === true) {
             win.cancelAnimationFrame(id);
             $(".hide").toggle('.modal_background');
-            } else {
+            }
+            else {
                 id = win.requestAnimationFrame(main);
             }
             
@@ -69,8 +70,8 @@ var Engine = (function(global) {
                 player.winner = false;
             } else {
                 win.requestAnimationFrame(main);
-            };
-        });   
+            }
+        })   
     } 
 
     /* This function does some initial setup that should only occur once,
