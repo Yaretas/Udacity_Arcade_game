@@ -76,10 +76,11 @@ var Engine = (function(global) {
             win.cancelAnimationFrame(id);
             $(".hide").toggle('.modal_background');
         } else {
-           id = win.requestAnimationFrame(main);
+            id = win.requestAnimationFrame(main);
         };
 
         $('.replay_button').click(function(){
+            $('div').removeClass('.hide');
             player.reset();
             player.winner = false;
         });
