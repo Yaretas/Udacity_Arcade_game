@@ -23,10 +23,7 @@ var Engine = (function(global) {
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         lastTime,
-        id;
-
-    const modal = document.querySelector(".modal_background");
-    
+        id;    
 
     canvas.width = 505;
     canvas.height = 606;
@@ -61,19 +58,19 @@ var Engine = (function(global) {
          */
         if (player.winner === true) {
             win.cancelAnimationFrame(id);
-            modal.classList.toggle("hide");
+            $(".hide").toggle('.modal_background');
             }
             else {
                 id = win.requestAnimationFrame(main);
             }
             
         $('.replay_button').click(function(){
-            $(".modal_background").toggle( "bounce", "slow" );
+            $(".modal_background").toggle( "hide" );
             player.reset();
             player.winner = false;
             win.requestAnimationFrame(main);
         })   
-    }
+    } 
 
     /* This function does some initial setup that should only occur once,
      * particularly setting the lastTime variable that is required for the
