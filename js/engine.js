@@ -23,7 +23,7 @@ var Engine = (function(global) {
         canvas = doc.createElement('canvas'),
         ctx = canvas.getContext('2d'),
         lastTime,
-        id;    
+        gameState;     
 
     canvas.width = 505;
     canvas.height = 606;
@@ -57,15 +57,24 @@ var Engine = (function(global) {
          * function again as soon as the browser is able to draw another frame.
          */  
         if (player.winner === true) {
-            win.cancelAnimationFrame(id);
-            $(".hide").toggle('.modal_background');
-            } else {
-            id = win.requestAnimationFrame(main);
-        };
-
-        $('.replay_button').click(function(){
-            player.reset();
-            player.winner = false;
+            // win.cancelAnimationFrame(id);
+            gameState = 1;
+            $('.hide').toggle(".modal_background");
+        } else if (gameState === 0) {
+            win.requestAnimationFrame(main);
+        }
+            
+        $('.replay_button').click( () => {
+            if (gameState === 1) {
+                ctx.clearRect(0,0,canvas.width,canvas.height);
+                $(".modal_background").toggle("bounce", { times: 3 }, "slow");
+                player.winner = false;
+                console.log(player.winner);
+                player.reset();
+                gameState = 0;
+                main();
+            }
+            
         });
 
     } 
@@ -76,8 +85,10 @@ var Engine = (function(global) {
      */
     function init() {
         reset();
+        gameState = 0;
         lastTime = Date.now();
         main();
+        
     }
 
     /* This function is called by main (our game loop) and itself calls all
