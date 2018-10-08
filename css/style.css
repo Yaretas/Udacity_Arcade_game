@@ -1,0 +1,80 @@
+body {
+    text-align: center;
+    background-color: #330033;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='90' height='90' viewBox='0 0 90 90'%3E%3Ccircle fill='%2306B' cx='45' cy='45' r='10'/%3E%3Cg fill='%23800' fill-opacity='1'%3E%3Ccircle cx='0' cy='90' r='10'/%3E%3Ccircle cx='90' cy='90' r='10'/%3E%3Ccircle cx='90' cy='0' r='10'/%3E%3Ccircle cx='0' cy='0' r='10'/%3E%3C/g%3E%3C/svg%3E");
+    /* background by SVGBackgrounds.com */
+    font-family: 'Press Start 2P', cursive;
+}
+
+h1 {
+    color: white;
+    text-shadow: 3px 3px 8px black;
+}
+
+/* modal Decoration */
+
+.modal_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.438); 
+}
+
+.modal_body {
+    position: relative;
+    width: 400px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    text-decoration: black;
+    background: #9EB3C2;
+    transform: translate(-50%, -70%);
+    border: 4px solid black;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px #58616D; 
+    
+}
+
+.modal_body h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20%;
+    text-shadow: 5px 5px 10px black;
+}
+
+
+.replay_button {
+    background-color: #0066BB; /* French blue */
+    border: 2px solid black;
+    color: white;
+    padding: 10px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.hide {
+    display: none;
+} 
+
+
+/* footer decoration */
+
+.footer_decor {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: 'Gochi Hand', cursive;
+    color: #778393;
+    size: 10px;
+    text-shadow: 3px 3px 8px black;
+
+}
+
+.footer_decor a{
+    text-decoration: none;
+}
