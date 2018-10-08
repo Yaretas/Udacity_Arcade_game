@@ -65,10 +65,12 @@ var Engine = (function(global) {
             }
             
         $('.replay_button').click(function(){
-            $(".modal_background").toggle( "hide" );
-            player.reset();
-            player.winner = false;
-            win.requestAnimationFrame(main);
+            if($(".modal_background").toggle( "hide" )){
+                player.reset();
+                player.winner = false;
+            } else {
+                win.requestAnimationFrame(main);
+            }
         })   
     } 
 
